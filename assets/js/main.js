@@ -3,7 +3,8 @@
 
 
 /**
- * nuevoPaciente - funcion que obtiene los datos del "form de "
+ * nuevoPaciente - funcion que obtiene los datos del "form" del alta de nuevos
+ * pacientes y lo envia a un fichero php "nuevoPaciente.php"
  */
 function nuevoPaciente(){
     var paciente = {};
@@ -13,14 +14,19 @@ function nuevoPaciente(){
     paciente.dni = $("#nuevoPaciente_dni").val()
 
     console.log(paciente);
+
+    $.ajax({
+        url: 'nuevoPaciente.php',
+        data: {paciente: JSON.stringify(paciente)},
+        type: 'POST',
+        dataType: 'json',
+        success:function(data, textStatus, jqXHR){
+            console.log(Success);
+        }
+});
 }
 
 
-function rellenar(){
-    $.getJSON("/person.php", function(result){
-        console.log(result);
-        $("#nombre").val(result.name);
-        $("#edad").val(result.age);
-        $("#ciudad").val(result.city);
-    });
+function anyadirEspecialidad(){
+    $("#nuevoPersonal_botton_anyadir")
 }
