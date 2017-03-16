@@ -1,10 +1,6 @@
-
-
-
-
 /**
- * nuevoPaciente - funcion que obtiene los datos del "form" del alta de nuevos
- * pacientes y lo envia a un fichero php "nuevoPaciente.php"
+ * nuevoPaciente - obtiene los datos del formulario de nuevo paciente y los
+ * envia a <fichero PHP> 
  */
 function nuevoPaciente(){
     var paciente = {};
@@ -15,18 +11,57 @@ function nuevoPaciente(){
 
     console.log(paciente);
 
+    enviarJSON('hola.php', paciente);
+}
+
+/**
+ * nuevoPersonal - obtiene los datos del formulario nuevo personal y los envia a
+ * <fichero PHP>
+ */
+function nuevoPersonal(){
+    var personal = {};
+    personal.nombre = $("#nuevoPaciente_nombre").val();
+
+    console.log(personal);
+
+    enviarJSON('hola.php', personal);
+}
+
+/**
+ * enviarJSON - envia un objeto JSON en forma de String a el fichero phpUrl
+ * mediante una peticion POST
+ * 
+ * @param {String} phpUrl 
+ * @param {JSON} jsonObjet 
+ */
+function enviarJSON(phpUrl, jsonObjet){
     $.ajax({
-        url: 'nuevoPaciente.php',
-        data: {paciente: JSON.stringify(paciente)},
+        url: phpUrl,
+        data: {json: JSON.stringify(jsonObjet)},
         type: 'POST',
         dataType: 'json',
         success:function(data, textStatus, jqXHR){
-            console.log(Success);
+            console.log("success");
         }
-});
+    });
+}
+
+/**
+ * anyadirEspecialidad - añade un campo de especialidad en el html.
+ */
+function anyadirEspecialidad(){
+    // TODO:
 }
 
 
-function anyadirEspecialidad(){
-    $("#nuevoPersonal_botton_anyadir")
+// Mis mierdas
+function asdf(){
+    var a = {
+        'nombre' : 'David',
+        'telefono' : [
+            '679919980',
+            '786777568'
+        ],
+    }
+    console.log(a.telefono[0]);
 }
