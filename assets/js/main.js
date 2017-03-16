@@ -20,7 +20,15 @@ function nuevoPaciente(){
  */
 function nuevoPersonal(){
     var personal = {};
-    personal.nombre = $("#nuevoPaciente_nombre").val();
+    personal.nombre = $("#nuevoPersonal_nombre").val();
+    personal.apellido = $("#nuevoPersonal_apellido").val();
+    personal.numColegiado = $("#nuevoPersonal_numcoleg").val();
+    personal.tMinConsulta = $("#nuevoPersonal_tminconsulta").val();
+    personal.diasConsulta = $("#nuevoPersonal_diasconsulta").val();
+    personal.especialidad = [];
+    $("input[name='especialidades[]']").each(function() {
+        personal.especialidad.push($(this).val());
+    });
 
     console.log(personal);
 
@@ -50,18 +58,19 @@ function enviarJSON(phpUrl, jsonObjet){
  * anyadirEspecialidad - añade un campo de especialidad en el html.
  */
 function anyadirEspecialidad(){
-    // TODO:
+    var div = '<div class="form-group" id="divEspecialidad"><input type="text" class="form-control" placeholder="Especialidad" name="especialidades[]"></div>'
+    $("#spamEspecialidad").prepend(div);
 }
 
 
-// Mis mierdas
-function asdf(){
-    var a = {
-        'nombre' : 'David',
-        'telefono' : [
-            '679919980',
-            '786777568'
-        ],
-    }
-    console.log(a.telefono[0]);
-}
+// // Mis mierdas
+// function asdf(){
+//     var a = {
+//         'nombre' : 'David',
+//         'telefono' : [
+//             '679919980',
+//             '786777568'
+//         ],
+//     }
+//     console.log(a.telefono[0]);
+// }
