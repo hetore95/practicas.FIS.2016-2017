@@ -75,16 +75,3 @@ function anyadirEspecialidad(){
     var div = '<div class="form-group" id="divEspecialidad"><input type="text" class="form-control" placeholder="Especialidad" name="especialidades[]"></div>'
     $("#spamEspecialidad").prepend(div);
 }
-
-
-// // Mis mierdas
-// function asdf(){
-//     var a = {
-//         'nombre' : 'David',
-//         'telefono' : [
-//             '679919980',
-//             '786777568'
-//         ],
-//     }
-//     console.log(a.telefono[0]);
-// }
