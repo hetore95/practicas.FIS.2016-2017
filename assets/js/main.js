@@ -36,6 +36,20 @@ function nuevoPersonal(){
 }
 
 /**
+ * peticionLogging - obtiene los datos del form de logging y los mana al
+ * servidor.
+ */
+function peticionLogging(){
+    var logging = {};
+    loggin.usr = $("#logging_user").val();
+    loggin.usr = $("#logging_passwd").val();
+
+    console.log(logging);
+    
+    enviarJSON('hola.php', logging);
+}
+
+/**
  * enviarJSON - envia un objeto JSON en forma de String a el fichero phpUrl
  * mediante una peticion POST
  * 
