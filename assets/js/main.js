@@ -40,13 +40,13 @@ function nuevoPersonal(){
  * servidor.
  */
 function peticionLoging(){
-    var logging = {};
-    logging.usr = $("#logging_user").val();
-    logging.usr = $("#logging_passwd").val();
+    var loging = {};
+    loging.usr = $("#loging_user").val();
+    loging.usr = $("#loging_passwd").val();
 
-    console.log(logging);
+    console.log(loging);
     
-    enviarJSON('hola.php', logging);
+    enviarJSON('login.php', loging);
 }
 
 /**
