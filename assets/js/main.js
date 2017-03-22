@@ -36,6 +36,20 @@ function nuevoPersonal(){
 }
 
 /**
+ * peticionLogging - obtiene los datos del form de logging y los mana al
+ * servidor.
+ */
+function peticionLogging(){
+    var logging = {};
+    loggin.usr = $("#logging_user").val();
+    loggin.usr = $("#logging_passwd").val();
+
+    console.log(logging);
+    
+    enviarJSON('hola.php', logging);
+}
+
+/**
  * enviarJSON - envia un objeto JSON en forma de String a el fichero phpUrl
  * mediante una peticion POST
  * 
@@ -61,16 +75,3 @@ function anyadirEspecialidad(){
     var div = '<div class="form-group" id="divEspecialidad"><input type="text" class="form-control" placeholder="Especialidad" name="especialidades[]"></div>'
     $("#spamEspecialidad").prepend(div);
 }
-
-
-// // Mis mierdas
-// function asdf(){
-//     var a = {
-//         'nombre' : 'David',
-//         'telefono' : [
-//             '679919980',
-//             '786777568'
-//         ],
-//     }
-//     console.log(a.telefono[0]);
-// }
