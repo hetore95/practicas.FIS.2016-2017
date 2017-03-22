@@ -39,10 +39,10 @@ function nuevoPersonal(){
  * peticionLogging - obtiene los datos del form de logging y los mana al
  * servidor.
  */
-function peticionLogging(){
+function peticionLoging(){
     var logging = {};
-    loggin.usr = $("#logging_user").val();
-    loggin.usr = $("#logging_passwd").val();
+    logging.usr = $("#logging_user").val();
+    logging.usr = $("#logging_passwd").val();
 
     console.log(logging);
     
