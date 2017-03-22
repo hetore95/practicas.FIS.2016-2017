@@ -16,13 +16,13 @@ $result = mysql_query($query) or die("Unable to verify user because " . mysql_er
 $row = mysql_fetch_assoc($result);
 
 if ($row['total'] == 1) {
-	$query = "SELECT .... FROM usuario WHERE DNI = '$DNI'";
+	$query = "SELECT TIPO_USUARIO FROM usuario WHERE DNI = '$DNI'";
 	$result = mysql_query($query) or die("Unable to verify user because " . mysql_error());
 	$line = mysql_fetch_array($result, MYSQL_ASSOC);
-	if($line[....] == "medico"){
+	if($line[TIPO_USUARIO] == "medico"){
 		$response["medico"] = 1;
 	}
-	elseif ($line[...] == "admin") {
+	elseif ($line[TIPO_USUARIO] == "admin") {
 		$response["admin"] = 1;
 	}
 	else{
