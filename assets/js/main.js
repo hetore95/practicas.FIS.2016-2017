@@ -25,6 +25,8 @@ function nuevoPersonal(){
     personal.numColegiado = $("#nuevoPersonal_numcoleg").val();
     personal.tMinConsulta = $("#nuevoPersonal_tminconsulta").val();
     personal.diasConsulta = $("#nuevoPersonal_diasconsulta").val();
+    personal.dni = $("#nuevoPersonal_DNI").val();
+    personal.passwd = $("#nuevoPersonal_contraseña").val();
     personal.especialidad = [];
     $("input[name='especialidades[]']").each(function() {
         personal.especialidad.push($(this).val());
