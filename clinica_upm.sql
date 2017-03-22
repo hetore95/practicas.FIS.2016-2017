@@ -93,7 +93,6 @@ CREATE TABLE `historial` (
 CREATE TABLE `paciente` (
   `ID` int(11) NOT NULL,
   `ID_USUARIO` int(11) NOT NULL,
-  `DNI` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `COMPANIA_SEGURO` varchar(15) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -153,7 +152,7 @@ CREATE TABLE `usuario` (
   `ID` int(10) UNSIGNED NOT NULL,
   `NOMBRE` varchar(16) COLLATE utf8_spanish_ci NOT NULL,
   `APELLIDOS` varchar(24) COLLATE utf8_spanish_ci NOT NULL,
-  `ALIAS` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
+  `DNI` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `PASSWORD` varchar(24) COLLATE utf8_spanish_ci NOT NULL,
   `TIPO_USUARIO` varchar(10) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
