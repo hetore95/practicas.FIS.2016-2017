@@ -1,4 +1,9 @@
 <?php
+var_dump($_POST);
+$stingJSON = $_POST['json'];
+$obj = json_decode($stingJSON,true);
+var_dump($obj);
+
 $servername = "localhost";
 $db_username = "";
 $db_password = "";
