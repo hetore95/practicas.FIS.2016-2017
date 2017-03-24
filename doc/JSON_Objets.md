@@ -11,6 +11,8 @@
     "numColegiado":"1234",
     "tMinConsulta":"1",
     "diasConsulta":"3",
+    "dni":"23456789",
+    "passwd":"xxxxxx"
     "especialidad":[
         "Podologo",
         "..."

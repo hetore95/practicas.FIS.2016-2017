@@ -8,10 +8,11 @@ function nuevoPaciente(){
     paciente.apellido = $("#nuevoPaciente_apellido").val();
     paciente.companyia = $("#nuevoPaciente_companyia").val();
     paciente.dni = $("#nuevoPaciente_dni").val()
+    paciente.contrasenya = $("#nuevoPaciente_contrasenia").val();
 
     console.log(paciente);
 
-    enviarJSON('hola.php', paciente);
+    enviarJSON('insertar_Paciente.php', paciente);
 }
 
 /**
@@ -25,6 +26,8 @@ function nuevoPersonal(){
     personal.numColegiado = $("#nuevoPersonal_numcoleg").val();
     personal.tMinConsulta = $("#nuevoPersonal_tminconsulta").val();
     personal.diasConsulta = $("#nuevoPersonal_diasconsulta").val();
+    personal.dni = $("#nuevoPersonal_DNI").val();
+    personal.passwd = $("#nuevoPersonal_contraseña").val();
     personal.especialidad = [];
     $("input[name='especialidades[]']").each(function() {
         personal.especialidad.push($(this).val());
@@ -32,21 +35,21 @@ function nuevoPersonal(){
 
     console.log(personal);
 
-    enviarJSON('hola.php', personal);
+    enviarJSON('insertarPersonal.php', personal);
 }
 
 /**
  * peticionLogging - obtiene los datos del form de logging y los mana al
  * servidor.
  */
-function peticionLogging(){
-    var logging = {};
-    loggin.usr = $("#logging_user").val();
-    loggin.usr = $("#logging_passwd").val();
+function peticionLoging(){
+    var loging = {};
+    loging.usr = $("#loging_user").val();
+    loging.usr = $("#loging_passwd").val();
 
-    console.log(logging);
+    console.log(loging);
     
-    enviarJSON('hola.php', logging);
+    enviarJSON('login.php', loging);
 }
 
 /**
