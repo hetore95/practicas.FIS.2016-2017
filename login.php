@@ -1,48 +1,32 @@
 <?php
-var_dump($_POST);
-$stingJSON = $_POST['json'];
-$obj = json_decode($stingJSON,true);
-var_dump($obj);
+	require './assets/php/BBDD.php';
 
-$servername = "localhost";
-$db_username = "";
-$db_password = "";
-$db_name = "clinica_upm";
+	$link = conectar();
 
-$DNI = $obj['usr'];
-$password = $obj['passwd'];
+	$arr_login = json_decode($_POST['json'], true);
 
-$conn = new mysqli($servername, $db_username, $db_password, $db_name);
+	// ver estructura de ese array ($arr_login) por consola
 
-if ($conn->connect_error) {
-    die("No se pudo conectar a la base de datos: " . $conn->connect_error);
-} 
+	$query = "SELECT * FROM usuario WHERE DNI = '" . $arr_login['usr'] . "' AND PASSWORD = '" . $arr_login['passwd'] . "'";
+	$result = mysql_query($query, $link);
+	$row = mysql_fetch_assoc($result);
 
-$query = "SELECT * FROM usuario WHERE DNI = '$DNI' AND password = '$password'";
-$result = $conn->query($query) or die("Unable to verify user because " . mysql_error());
-
-if ($result->num_rows > 0) {
-	$query1 = "SELECT TIPO_USUARIO FROM usuario WHERE DNI = '$DNI'";
-	$result1 = mysql_query($query1) or die("Unable to verify user because " . mysql_error());
-	$line = $result1->fetch_assoc();
-	if($line[TIPO_USUARIO] == "medico"){
-		$response["medico"] = 1;
+	if ( mysql_num_rows($result) == 1 ) {
+		if( $row['NOMBRE'] == "ROOT" ){
+			
+			$response['tipo_usuario'] = "ROOT";
+			
+		} else{
+			
+			$response['tipo_usuario'] = $row['TIPO_USUARIO'];
+			
+		}
+		$response['usuario_registrado'] = true;
+	} else {
+		
+	    $response['usuario_registrado'] = false;
+	    // Libero la conexión actual a la bbdd
+	    mysql_close($link);
 	}
-	elseif ($line[TIPO_USUARIO] == "admin") {
-		$response["admin"] = 1;
-	}
-	else{
-		$response["errorTr"] = 1;
-	}
-    echo json_encode($response);
-}
-
-
-else {
-
-    $response["errorAu"] = 1;
-
-    echo json_encode($response);
-}
-
+	echo json_encode($response);
 ?>
