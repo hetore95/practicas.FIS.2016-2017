@@ -8,10 +8,11 @@ function nuevoPaciente(){
     paciente.apellido = $("#nuevoPaciente_apellido").val();
     paciente.companyia = $("#nuevoPaciente_companyia").val();
     paciente.dni = $("#nuevoPaciente_dni").val()
+    paciente.contrasenya = $("#nuevoPaciente_contrasenia").val();
 
     console.log(paciente);
 
-    enviarJSON('hola.php', paciente);
+    enviarJSON('insertar_Paciente.php', paciente);
 }
 
 /**
@@ -32,7 +33,7 @@ function nuevoPersonal(){
 
     console.log(personal);
 
-    enviarJSON('hola.php', personal);
+    enviarJSON('insertarPersonal.php', personal);
 }
 
 /**
