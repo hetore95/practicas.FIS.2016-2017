@@ -12,7 +12,7 @@ $db_name = "clinica_upm";
 $DNI = $obj['usr'];
 $password = $obj['passwd'];
 
-$conn = new mysqli($servername, $db_username, $db_password, $dbname);
+$conn = new mysqli($servername, $db_username, $db_password, $db_name);
 
 if ($conn->connect_error) {
     die("No se pudo conectar a la base de datos: " . $conn->connect_error);
