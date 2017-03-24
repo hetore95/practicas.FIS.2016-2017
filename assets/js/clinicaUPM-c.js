@@ -3,33 +3,15 @@
  * envia a <fichero PHP> 
  */
 function nuevoPaciente(){
-
     var paciente = {};
-    var respuesta = {};
-
     paciente.nombre = $("#nuevoPaciente_nombre").val();
     paciente.apellido = $("#nuevoPaciente_apellido").val();
     paciente.companyia = $("#nuevoPaciente_companyia").val();
-    paciente.dni = $("#nuevoPaciente_dni").val();
-    paciente.contrasenya = $("#nuevoPaciente_contrasenia").val();
+    paciente.dni = $("#nuevoPaciente_dni").val()
 
     console.log(paciente);
 
-    respuesta = enviarJSON('./insertarPaciente.php', paciente);
-
-    respuesta.done(function( data, textStatus, jqXHR ) {
-
-        if(data.error) {
-
-            $('#paciente_registrado').addClass('alert-danger');
-        } else {
-
-            $('#paciente_registrado').addClass('alert-success');
-        }
-
-        $('#paciente_registrado > span').text(data.descripcion);
-        $('#paciente_registrado').show('slow');
-    });
+    enviarJSON('hola.php', paciente);
 }
 
 /**
@@ -37,16 +19,13 @@ function nuevoPaciente(){
  * <fichero PHP>
  */
 function nuevoPersonal(){
-
     var personal = {};
-
     personal.nombre = $("#nuevoPersonal_nombre").val();
     personal.apellido = $("#nuevoPersonal_apellido").val();
     personal.numColegiado = $("#nuevoPersonal_numcoleg").val();
     personal.tMinConsulta = $("#nuevoPersonal_tminconsulta").val();
     personal.diasConsulta = $("#nuevoPersonal_diasconsulta").val();
     personal.especialidad = [];
-
     $("input[name='especialidades[]']").each(function() {
         personal.especialidad.push($(this).val());
     });
