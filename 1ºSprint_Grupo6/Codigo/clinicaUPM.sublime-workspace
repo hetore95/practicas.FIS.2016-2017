@@ -1,0 +1,552 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"NU",
+				"nuevoPaciente"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"ph",
+				"phpUrl"
+			],
+			[
+				"re",
+				"response"
+			],
+			[
+				"json_",
+				"json_encode"
+			],
+			[
+				"a",
+				"arr_login"
+			],
+			[
+				"arra",
+				"array"
+			],
+			[
+				"console",
+				"console_log"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"col-",
+				"col-lg-4"
+			],
+			[
+				"text-a",
+				"text-align"
+			],
+			[
+				"ba",
+				"background-image"
+			],
+			[
+				"i",
+				"input\tTag"
+			],
+			[
+				"f",
+				"form\tTag"
+			],
+			[
+				"cel",
+				"cellspacing\tAttr"
+			],
+			[
+				"te",
+				"text"
+			],
+			[
+				"ma",
+				"mark\tTag"
+			],
+			[
+				"fo",
+				"footer\tTag"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"co",
+				"columns"
+			],
+			[
+				"bo",
+				"bootstrap"
+			],
+			[
+				"li",
+				"link\tTag"
+			],
+			[
+				"met",
+				"meta\tTag"
+			],
+			[
+				"me",
+				"meta\tTag"
+			],
+			[
+				"ti",
+				"title\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "insertarPaciente.php",
+			"settings":
+			{
+				"buffer_size": 2320,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "login.php",
+			"settings":
+			{
+				"buffer_size": 760,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "nuevoPaciente.html",
+			"settings":
+			{
+				"buffer_size": 9623,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Carol/Downloads/fullcalendar-3.3.0/fullcalendar-3.3.0/demos/json/events.json",
+			"settings":
+			{
+				"buffer_size": 1026,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Carol/Downloads/fullcalendar-3.3.0/fullcalendar-3.3.0/fullcalendar.js",
+			"settings":
+			{
+				"buffer_size": 421442,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Carol/Downloads/fullcalendar-3.3.0/fullcalendar-3.3.0/demos/agenda-views.html",
+			"settings":
+			{
+				"buffer_size": 1995,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/xampp/htdocs/FIS",
+		"/C/xampp/htdocs/FIS/assets",
+		"/C/xampp/htdocs/FIS/assets/js",
+		"/C/xampp/htdocs/FIS/assets/php"
+	],
+	"file_history":
+	[
+		"/C/Users/Carol/Downloads/fullcalendar-3.3.0/fullcalendar-3.3.0/demos/php/utils.php",
+		"/C/Users/Carol/Downloads/fullcalendar-3.3.0/fullcalendar-3.3.0/demos/php/get-timezones.php",
+		"/C/Users/Carol/Downloads/fullcalendar-3.3.0/fullcalendar-3.3.0/demos/php/get-events.php",
+		"/C/xampp/htdocs/FIS/insertarPaciente.php",
+		"/C/xampp/htdocs/FIS/assets/js/demo.js",
+		"/C/xampp/htdocs/FIS/hola.php",
+		"/C/xampp/htdocs/FIS/nuevoPersonal.html",
+		"/C/xampp/htdocs/FIS/index.html",
+		"/C/xampp/htdocs/FIS/assets/js/clinicaUPM.js",
+		"/C/xampp/htdocs/FIS/nuevoPaciente.html",
+		"/C/xampp/htdocs/FIS/insertarPersonal.php",
+		"/C/xampp/htdocs/FIS/login.php",
+		"/C/xampp/htdocs/FIS/insertar_Paciente.php",
+		"/C/Users/Carol/Downloads/light-bootstrap-dashboard-master/notifications.html",
+		"/C/xampp/htdocs/FIS/prueba.html",
+		"/C/xampp/htdocs/FIS/assets/php/BBDD.php",
+		"/C/Users/Carol/Downloads/light-bootstrap-dashboard-master/assets/js/bootstrap-notify.js",
+		"/C/xampp/htdocs/FIS/assets/php/funciones.php",
+		"/C/xampp/htdocs/FIS/assets/php/consolaDebug.php",
+		"/C/xampp/htdocs/FIS/assets/php/consolaDebug",
+		"/C/xampp/htdocs/FIS/assets/php/BBDD",
+		"/C/xampp/htdocs/FIS/assets/php/ConsolaDebug",
+		"/C/xampp/htdocs/FIS/clinica_upm.sql",
+		"/C/xampp/htdocs/investigar/2 - grid (rejilla).html",
+		"/C/Users/Carol/Downloads/light-bootstrap-dashboard-master/user.html",
+		"/C/Users/Carol/Downloads/practicas.FIS.2016-2017-master/practicas.FIS.2016-2017-master/assets/js/main.js",
+		"/C/Users/Carol/Downloads/practicas.FIS.2016-2017-master/practicas.FIS.2016-2017-master/nuevoPaciente.html",
+		"/C/Users/Carol/Downloads/practicas.FIS.2016-2017-master/practicas.FIS.2016-2017-master/hola.php",
+		"/C/Users/Carol/Downloads/clinica_upm(3).sql",
+		"/C/Users/Carol/Downloads/clinica_upm(2).sql",
+		"/C/Users/Carol/Downloads/clinica_upm(1).sql",
+		"/C/Users/Carol/Downloads/light-bootstrap-dashboard-master/index.html",
+		"/C/xampp/htdocs/css/bootstrap_proyect.css",
+		"/C/xampp/htdocs/investigar/3 - tipografia y texto.html",
+		"/C/Users/Carol/Downloads/light-bootstrap-dashboard-master/table.html",
+		"/C/Users/Carol/Downloads/light-bootstrap-dashboard-master/assets/css/light-bootstrap-dashboard.css",
+		"/C/Users/Carol/Downloads/clinica_upm.sql",
+		"/C/Users/Carol/Downloads/127_0_0_1.sql",
+		"/C/Users/Carol/Downloads/light-bootstrap-dashboard-master/assets/css/demo.css",
+		"/C/Users/Carol/Downloads/hierapolis-develop/source/index.html",
+		"/C/xampp/htdocs/investigar/index.html",
+		"/C/xampp/htdocs/css/boostrap_proyect.css",
+		"/C/xampp/htdocs/js/jquery.js"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"prin",
+			"var_",
+			"echo",
+			"showno",
+			"dbname",
+			"console_log",
+			"main"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "insertarPaciente.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2320,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 936.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "login.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 760,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "nuevoPaciente.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9623,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5326,
+								5326
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2268.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Carol/Downloads/fullcalendar-3.3.0/fullcalendar-3.3.0/demos/json/events.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1026,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 594.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/Carol/Downloads/fullcalendar-3.3.0/fullcalendar-3.3.0/fullcalendar.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 421442,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3348.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/Carol/Downloads/fullcalendar-3.3.0/fullcalendar-3.3.0/demos/agenda-views.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1995,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								340,
+								340
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "clinicaUPM.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 205.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
