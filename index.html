@@ -4,7 +4,7 @@
     <style>
         .login-page {
             width: 360px;
-            padding: 10% 0 0;
+            padding: 15% 0 0;
             margin: auto;
         }
         .form {
@@ -29,7 +29,7 @@
                 box-sizing: border-box;
                 font-size: 14px;
         }
-        .login-button {
+        .form button {
                 font-family: "Roboto", sans-serif;
                 text-transform: uppercase;
                 outline: 0;
@@ -42,11 +42,11 @@
                 cursor: pointer;
                 opacity: 0.6;
         }
-        .login-button:hover {
+        .form button:hover {
                 opacity: 0.8;
         }
-        .login-button:active,
-        .login-button:focus {
+        .form button:active,
+        .form button:focus {
              background: #2629c1;
         }
         .form label {
@@ -81,14 +81,6 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
-    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="assets/js/bootstrap-checkbox-radio-switch.js"></script>
-    <script src="assets/js/chartist.min.js"></script>
-    <script src="assets/js/bootstrap-notify.js"></script>
-    <script src="assets/js/light-bootstrap-dashboard.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/jquery.sharrre.js"></script>
 
     <script>
          function hide() {
@@ -96,6 +88,7 @@
                 x.style.display = 'none';
         }
     </script>
+
 </head>
 
 
@@ -142,7 +135,7 @@
                             <label>Password</label>
                             <input type="password" placeholder="Password" id="loging_passwd"/>
 
-                            <button class = "login-button" type="button" onclick="peticionLoging()">login</button>
+                            <button type="button" onclick="peticionLoging()">login</button>
 
                         </form>
 
@@ -160,5 +153,12 @@
             </footer>
         </div>
     </div>
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap-checkbox-radio-switch.js"></script>
+    <script src="assets/js/chartist.min.js"></script>
+    <script src="assets/js/bootstrap-notify.js"></script>
+    <script src="assets/js/light-bootstrap-dashboard.js"></script>
+    <script src="assets/js/clinicaUPM.js"></script>
 </body>
 </html>

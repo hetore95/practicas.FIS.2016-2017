@@ -21,9 +21,11 @@ function nuevoPaciente(){
 
         if(data.error) {
 
+            $('#paciente_registrado').removeClass('alert-success');
             $('#paciente_registrado').addClass('alert-danger');
         } else {
 
+            $('#paciente_registrado').removeClass('alert-danger');
             $('#paciente_registrado').addClass('alert-success');
         }
 
@@ -39,12 +41,15 @@ function nuevoPaciente(){
 function nuevoPersonal(){
 
     var personal = {};
+    var respuesta = {};
 
     personal.nombre = $("#nuevoPersonal_nombre").val();
     personal.apellido = $("#nuevoPersonal_apellido").val();
     personal.numColegiado = $("#nuevoPersonal_numcoleg").val();
     personal.tMinConsulta = $("#nuevoPersonal_tminconsulta").val();
     personal.diasConsulta = $("#nuevoPersonal_diasconsulta").val();
+    personal.contrasenya = $("#nuevoPersonal_contrasenia").val();
+    personal.dni = $("#nuevoPersonal_DNI").val();
     personal.especialidad = [];
 
     $("input[name='especialidades[]']").each(function() {
@@ -53,7 +58,23 @@ function nuevoPersonal(){
 
     console.log(personal);
 
-    enviarJSON('hola.php', personal);
+    respuesta = enviarJSON('./insertarPersonal.php', personal);
+
+    respuesta.done(function( data, textStatus, jqXHR ) {
+
+        if(data.error) {
+
+            $('#personal_registrado').removeClass('alert-success');
+            $('#personal_registrado').addClass('alert-danger');
+        } else {
+
+            $('#personal_registrado').removeClass('alert-danger');
+            $('#personal_registrado').addClass('alert-success');
+        }
+
+        $('#personal_registrado > span').text(data.descripcion);
+        $('#personal_registrado').show('slow');
+    });
 }
 
 /**
@@ -78,7 +99,7 @@ function peticionLoging(){
 
         if(data.usuario_registrado) {
 
-            window.location.href = "prueba.html?num=7";
+            window.location.href = "nuevoPaciente.html";
 
         } else {
 
