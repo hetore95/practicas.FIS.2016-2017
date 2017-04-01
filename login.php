@@ -1,42 +1,38 @@
 <?php
-$servername = "localhost";
-$db_username = "";
-$db_password = "";
-$db_name = "clinica_upm";
 
-$DNI = $_POST['usr'];
-$password = $_POST['passwd']
+	require './assets/php/BBDD.php';
 
-$conn = new mysql_connect($servername, $db_username, $db_password) or die('No se pudo conectar a la base de datos: ' . mysql_error());;
+	$link = conectar();
 
-mysql_select_db($dbname) or die('No se pudo conectar a la base de datos');
+	$arr_login = json_decode($_POST['json'], true);
 
-$query = "SELECT * FROM usuario WHERE DNI = '$DNI' AND password = '$password'";
-$result = mysql_query($query) or die("Unable to verify user because " . mysql_error());
-$row = mysql_fetch_assoc($result);
+	// ver estructura de ese array ($arr_login) por consola
 
-if ($row['total'] == 1) {
-	$query = "SELECT TIPO_USUARIO FROM usuario WHERE DNI = '$DNI'";
-	$result = mysql_query($query) or die("Unable to verify user because " . mysql_error());
-	$line = mysql_fetch_array($result, MYSQL_ASSOC);
-	if($line[TIPO_USUARIO] == "medico"){
-		$response["medico"] = 1;
+	$query = "SELECT * FROM usuario WHERE DNI = '" . $arr_login['usr'] . "' AND PASSWORD = '" . $arr_login['passwd'] . "'";
+
+	$result = mysql_query($query, $link);
+	$row = mysql_fetch_assoc($result);
+
+	if ( mysql_num_rows($result) == 1 ) {
+
+		if( $row['NOMBRE'] == "ROOT" ){
+
+			$response['tipo_usuario'] = "ROOT";
+		} else{
+
+			$response['tipo_usuario'] = $row['TIPO_USUARIO'];
+		}
+
+		$response['usuario_registrado'] = true;
+
+	} else {
+
+	    $response['usuario_registrado'] = false;
+
+	    // Libero la conexión actual a la bbdd
+	    mysql_close($link);
 	}
-	elseif ($line[TIPO_USUARIO] == "admin") {
-		$response["admin"] = 1;
-	}
-	else{
-		$response["errorTr"] = 1;
-	}
-    echo json_encode($response);
-}
 
 
-else {
-
-    $response["errorAu"] = 1;
-
-    echo json_encode($response);
-}
-
+	echo json_encode($response);
 ?>

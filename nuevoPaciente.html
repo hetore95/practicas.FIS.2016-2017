@@ -30,6 +30,14 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+
+    <script>
+         function hide() {
+            var x = document.getElementById('paciente_registrado');
+                x.style.display = 'none';
+        }
+    </script>
 </head>
 
 <body>
@@ -156,7 +164,19 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="button" onclick="nuevoPaciente()" class="btn btn-info btn-fill pull-right">Dar de Alta</button>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                &nbsp;
+                                            </div>
+                                            <div data-notify="container" class="col-xs-11 col-sm-4 alert alert-danger alert-with-icon animated fadeInDown" id= "paciente_registrado" style="display:none">
+                                                <button type="button" class="close" onclick="hide()">×</button>
+                                                <span></span>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <button type="button" onclick="nuevoPaciente()" class="btn btn-info btn-fill pull-right">Dar de Alta</button>
+                                            </div>
+                                        </div>
                                         <div class="clearfix"></div>
                                     </form>
                                 </div>
@@ -191,6 +211,6 @@
 <script src="assets/js/demo.js"></script>
 
 <!-- FIS -->
-<script src="assets/js/main.js"></script>
+<script src="./assets/js/clinicaUPM.js"></script>
 
 </html>
