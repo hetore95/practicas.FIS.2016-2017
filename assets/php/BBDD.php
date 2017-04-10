@@ -1,7 +1,5 @@
 <?php
 
-	require 'consolaDebug.php';
-
 	function conectar(){
 
 		// Se conecta a la bbbd y devuelve un identificador de conexión

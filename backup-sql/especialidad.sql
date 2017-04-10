@@ -1,5 +1,4 @@
-ALTER TABLE `especialidad` ADD `TIPO` VARCHAR(20) NOT NULL ;
-ALTER TABLE `especialidad` CHANGE `NOMBRE` `NOMBRE` VARCHAR(40) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL;
+
 INSERT INTO `especialidad` (`ID`, `TIPO`, `NOMBRE`) VALUES (NULL, 'Clínica', 'Alergología');
 INSERT INTO `especialidad` (`ID`, `TIPO`, `NOMBRE`) VALUES (NULL, 'Clínica', 'Anestesiología');
 INSERT INTO `especialidad` (`ID`, `TIPO`, `NOMBRE`) VALUES (NULL, 'Clínica', 'Cardiología');
