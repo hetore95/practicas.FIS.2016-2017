@@ -1,78 +1,71 @@
 ﻿<!DOCTYPE html>
 
 <html>
-<style>
-    .login-page {
-        width: 360px;
-        padding: 12% 0 0;
-        margin: auto;
-    }
-
-
-    .form {
-        position: relative;
-        z-index: 1;
-        background: #FFFFFF;
-        max-width: 360px;
-        margin: 0 auto 100px;
-        padding: 45px;
-        text-align: left;
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-        opacity: 1;
-    }
-
-
-        .form input {
-            font-family: "Roboto", sans-serif;
-            outline: 0;
-            background: #f2f2f2;
-            width: 100%;
-            border: 0;
-            margin: 0 0 15px;
-            padding: 15px;
-            box-sizing: border-box;
-            font-size: 14px;
+    <style>
+        .login-page {
+            width: 360px;
+            padding: 15% 0 0;
+            margin: auto;
         }
-
-
-        .form button {
-            font-family: "Roboto", sans-serif;
-            text-transform: uppercase;
-            outline: 0;
-            background: #4CAF50;
-            width: 100%;
-            border: 0;
-            padding: 15px;
-            color: #FFFFFF;
-            font-size: 14px;
-            -webkit-transition: all 0.3 ease;
-            transition: all 0.3 ease;
-            cursor: pointer;
-            opacity: 0.6;
-        }
-
-
-            .form button:hover {
-                opacity: 1;
-            }
-
-            .form button:active,
-            .form button:focus {
-                background: #43A047;
-            }
-
-
-        .form label {
-            font-family: "Roboto", sans-serif;
+        .form {
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            max-width: 360px;
+            margin: 0 auto 100px;
+            padding: 45px;
             text-align: left;
-            font-size: 14px;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            opacity: 1;
+        }
+        .form input {
+                font-family: "Roboto", sans-serif;
+                outline: 0;
+                background: #f2f2f2;
+                width: 100%;
+                border: 0;
+                margin: 0 0 15px;
+                padding: 15px;
+                box-sizing: border-box;
+                font-size: 14px;
+        }
+        .form button {
+                font-family: "Roboto", sans-serif;
+                text-transform: uppercase;
+                outline: 0;
+                background: #2629c1;
+                width: 100%;
+                border: 0;
+                padding: 15px;
+                color: #FFFFFF;
+                font-size: 14px;
+                cursor: pointer;
+                opacity: 0.6;
+        }
+        .form button:hover {
+                opacity: 0.8;
+        }
+        .form button:active,
+        .form button:focus {
+             background: #2629c1;
+        }
+        .form label {
+                font-family: "Roboto", sans-serif;
+                text-align: left;
+                font-size: 14px;
+        }
+        .content {
+            background-color: white;
         }
 
+        /* Carol */
+        #usuario_no_registrado {
+            text-align: center;
+            display: none;
+        }
 
-    .content {
-        background: #FFFFFF;
-    }
-</style>
+    </style>
+
 <head>
 
     <meta charset="utf-8" />
@@ -89,79 +82,18 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 
+    <script>
+         function hide() {
+            var x = document.getElementById('usuario_no_registrado');
+                x.style.display = 'none';
+        }
+    </script>
+
 </head>
 
 
 <body>
-    <style>
-        .login-page {
-            width: 360px;
-            padding: 15% 0 0;
-            margin: auto;
-        }
 
-
-        .form {
-            position: relative;
-            z-index: 1;
-            background: #FFFFFF;
-            max-width: 360px;
-            margin: 0 auto 100px;
-            padding: 45px;
-            text-align: left;
-            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-            opacity: 1;
-        }
-
-
-            .form input {
-                font-family: "Roboto", sans-serif;
-                outline: 0;
-                background: #f2f2f2;
-                width: 100%;
-                border: 0;
-                margin: 0 0 15px;
-                padding: 15px;
-                box-sizing: border-box;
-                font-size: 14px;
-            }
-
-
-            .form button {
-                font-family: "Roboto", sans-serif;
-                text-transform: uppercase;
-                outline: 0;
-                background: #2629c1;
-                width: 100%;
-                border: 0;
-                padding: 15px;
-                color: #FFFFFF;
-                font-size: 14px;
-                cursor: pointer;
-                opacity: 0.6;
-            }
-
-
-           .form button:hover {
-                opacity: 0.8;
-          }
-
-           .form button:active,
-           .form button:focus {
-             background: #2629c1;
-         }
-
-            .form label {
-                font-family: "Roboto", sans-serif;
-                text-align: left;
-                font-size: 14px;
-            }
-
-
-        .content {
-            background-color: white;
-        }
-    </style>
     <div class="wrapper">
         <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
 
@@ -175,12 +107,23 @@
             <nav class="navbar navbar-default navbar-fixed">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="http://www.upm.es/">CLINICA UPM</a>
+                        <a class="navbar-brand" href="http://www.upm.es/">CLÍNICA UPM</a>
                     </div>
 
                 </div>
             </nav>
             <div class="content">
+
+                <div class="row">
+                        <div class="col-md-4">
+                            &nbsp;
+                        </div>
+                        <div data-notify="container" class="col-xs-11 col-sm-4 alert alert-danger alert-with-icon animated fadeInDown"                  id= "usuario_no_registrado" >
+                                <button type="button" class="close" onclick="hide()">×</button>
+                                <span><b> USUARIO NO REGISTRADO </b></span>
+                        </div>
+                </div>
+
                 <div class="login-page">
 
                     <div class="form">
@@ -216,6 +159,6 @@
     <script src="assets/js/chartist.min.js"></script>
     <script src="assets/js/bootstrap-notify.js"></script>
     <script src="assets/js/light-bootstrap-dashboard.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/clinicaUPM.js"></script>
 </body>
 </html>
