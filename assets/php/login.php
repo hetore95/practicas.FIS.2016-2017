@@ -1,6 +1,7 @@
 <?php
 
 	require 'BBDD.php';
+	require 'clinicaUPM.php';
 
 	$link = conectar();
 
@@ -15,24 +16,35 @@
 
 	if ( mysql_num_rows($result) == 1 ) {
 
-		if( $row['NOMBRE'] == "ROOT" ){
+		if( $row['TIPO_USUARIO'] != "PACIENTE" ){
 
-			$response['tipo_usuario'] = "ROOT";
-		} else{
+			if( $row['NOMBRE'] == "ROOT" ){
 
-			$response['tipo_usuario'] = $row['TIPO_USUARIO'];
+				$response['tipo_usuario'] = "ADMINISTRADOR";
+			} else {
+
+				$response['tipo_usuario'] = $row['TIPO_USUARIO'];
+			}
+
+			// Creamos sesión para entrar en la aplicación
+			iniciarSesion( $row['NOMBRE'], $response['tipo_usuario'] );
+
+			$response['usuario_registrado'] = true;
+		} else {
+
+			$response['usuario_registrado'] = false;
+			$response['mensaje'] = "No pueden entrar a la aplicación los pacientes. Ingrese un usuario válido.";
 		}
-
-		$response['usuario_registrado'] = true;
 
 	} else {
 
 	    $response['usuario_registrado'] = false;
-
-	    // Libero la conexión actual a la bbdd
-	    mysql_close($link);
+	    $response['mensaje'] = "Usuario no registrado.";
 	}
 
+
+	// Libero la conexión actual a la bbdd
+	mysql_close($link);
 
 	echo json_encode($response);
 ?>

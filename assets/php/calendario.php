@@ -12,7 +12,7 @@ $id_registro = 0;
 $link = conectar();
 
 //Buscar especialidad
-$sql = "SELECT id FROM especialidad WHERE nombre = '" . $obj['nombre'] . "'";
+$sql = "SELECT id FROM especialidad WHERE id = '" . $obj['id'] . "'";
 $result = mysql_query($sql, $link);
 
 if (mysql_num_rows($result) > 0) {
@@ -20,41 +20,49 @@ if (mysql_num_rows($result) > 0) {
     //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡TODO: Problema con las especialidades con acentos
     
     $row = mysql_fetch_row($result);
-    $sql = "SELECT fecha, id_personal, id_paciente FROM cita WHERE id_especialidad = '" . $row[0] . "' AND fecha >= CURDATE()";
+    $sql = "SELECT DATE_FORMAT(fecha,GET_FORMAT(DATE,'EUR')),DATE_FORMAT(fecha,GET_FORMAT(TIME,'EUR')), id_personal, id_paciente FROM cita WHERE id_especialidad = '" . $row[0] . "' AND fecha >= DATE_SUB(CURDATE(), INTERVAL 1 WEEK) ORDER BY fecha ";
     $result = mysql_query($sql, $link);
 
     if (mysql_num_rows($result) > 0) {
         //Sacar citas y buscar el resto de datos
-        while($row = mysql_fetch_assoc($result)){
-            
+		$i = 0;
+		$citas = array();
+        while($row = mysql_fetch_row($result)){
+			
             //Buscar médico
-            $sql = "SELECT id_usuario FROM PERSONAL WHERE id = ".$row['id_personal'];
+            $sql = "SELECT id_usuario FROM PERSONAL WHERE id = ".$row[2];
             $id = mysql_fetch_assoc(mysql_query($sql, $link))['id_usuario'];
             $sql = "SELECT nombre, apellidos FROM USUARIO WHERE id = ".$id;
             $row_2 = mysql_fetch_assoc(mysql_query($sql, $link));
             $medico = $row_2['nombre'].' '.$row_2['apellidos'];
             
             //Buscar paciente
-            $sql = "SELECT id_usuario FROM PACIENTE WHERE id = ".$row['id_paciente'];
+            $sql = "SELECT id_usuario FROM PACIENTE WHERE id = ".$row[3];
             $id = mysql_fetch_assoc(mysql_query($sql, $link))['id_usuario'];
             $sql = "SELECT nombre, apellidos FROM USUARIO WHERE id = ".$id;
             $row_2 = mysql_fetch_assoc(mysql_query($sql, $link));
             $paciente = $row_2['nombre'].' '.$row_2['apellidos'];
 
-            $respuesta = array('fecha' => $row['fecha'],
+            $citas[$i] = array('fecha' => $row[0],
+				'hora' => $row[1],
                 'medico' => $medico,
                 'paciente' => $paciente);
-            
-            echo json_encode($respuesta);            
+				
+            $i++;     
         }
+		$respuesta['citas'] = $citas;
+		$respuesta['error']=false;
                 
     } else {
-        echo "NO HAY CITAS";
+		$respuesta['error'] = true;
+		$respuesta['descripcion'] = "No hay citas";
     }
 } else {
-    echo "NO EXISTE ESPECIALIDAD";
+		$respuesta['error'] = true;
+		$respuesta['descripcion'] = "No existe especialidad";
 }
 
 
 //RESPUESTA
+echo json_encode($respuesta);      
 ?>
