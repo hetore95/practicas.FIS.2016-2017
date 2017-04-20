@@ -54,6 +54,7 @@ function peticionLoging(){
 
         } else {
 
+            $('#usuario_no_registrado > span').text(data.mensaje);
             $('#usuario_no_registrado').show('slow');
         }
     });
@@ -90,7 +91,7 @@ function pintarMenu(ancla, color) {
                         '</div>'+
                         '<ul class="nav">'+
                             '<li data-ancla="citas">'+
-                                '<a href="dashboard.html">'+
+                                '<a href="calendario.html">'+
                                     '<i class="pe-7s-news-paper"></i>'+
                                     '<p>Citas</p>'+
                                 '</a>'+
@@ -121,18 +122,25 @@ function pintarMenu(ancla, color) {
 }
 
 /**
- * pintarBarraNavegacion - pinta el html de la barra superior de la app.
+ * pintarBarraNavegacion - consulta el usuario que se ha conectado y pinta el html de la barra superior de la app.
  */
 function pintarBarraNavegacion() {
 
     var html = '';
+    var respuesta = {};
 
     html =  '<nav class="navbar navbar-default navbar-fixed">'+
                 '<div class="container-fluid">'+
                     '<div class="collapse navbar-collapse">'+
+                        '<ul class="nav navbar-nav navbar-left">'+
+                            '<li>'+
+                                '<a href="#" id="usuarioConectado">'+
+                                '</a>'+
+                            '</li>'+
+                        '</ul>'+
                         '<ul class="nav navbar-nav navbar-right">'+
                             '<li>'+
-                                '<a href="../../index.html">'+
+                                '<a href="#" id="cerrarSesion">'+
                                     '<p>Cerrar Sesión <i class="pe-7s-power"></i></p>'+
                                 '</a>'+
                             '</li>'+
@@ -143,4 +151,40 @@ function pintarBarraNavegacion() {
             '</nav>';
 
     $('#barraNavegacion').html(html);
+
+    $('#usuarioConectado').css('color', '#fb404b')
+                          .css('cursor', 'default');
+
+    // Hace que el link no redireccione a ningún sitio
+    $('#usuarioConectado').click(function( e ) {
+        e.preventDefault();
+    });
+
+    // Destruimos la sesión al salir de la app
+    $('#cerrarSesion').click(function( e ) {
+        
+        var respuesta = {};
+
+        e.preventDefault();
+
+        // Al no necesitar un json con la respuesta, creo una petición sin hacer uso de enviarJSON
+        $.post( '../php/clinicaUPM.php',  {"accion": "cerrar", "opcion": "sesion"})
+         .done(function( data ) {
+
+            console.log("SESIÓN DESTRUIDA");
+
+            window.location.href = '../../index.html';
+         });
+    });
+
+    // Agrego el usuario que está conectado en este momento
+    respuesta = enviarJSON('../php/clinicaUPM.php', { "accion": "consultar", "opcion": "sesion"});
+
+    respuesta.done(function( data, textStatus, jqXHR ) {
+
+        console.log("DATOS DE LA SESIÓN");
+        console.log(data);
+
+        $('#usuarioConectado').html('<p>' + '<i class="fa fa-user"></i> ' + data.usuario + ' (<i>' + data.perfil.toLowerCase() + '</i>)</p>');
+    });
 }
