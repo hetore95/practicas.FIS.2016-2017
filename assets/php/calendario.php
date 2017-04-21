@@ -17,7 +17,6 @@ $result = mysql_query($sql, $link);
 
 if (mysql_num_rows($result) > 0) {
     //Buscar citas
-    //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡TODO: Problema con las especialidades con acentos
     
     $row = mysql_fetch_row($result);
     $sql = "SELECT DATE_FORMAT(fecha,GET_FORMAT(DATE,'EUR')),DATE_FORMAT(fecha,GET_FORMAT(TIME,'EUR')), id_personal, id_paciente FROM cita WHERE id_especialidad = '" . $row[0] . "' AND fecha BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 1 WEEK) ORDER BY fecha ";
