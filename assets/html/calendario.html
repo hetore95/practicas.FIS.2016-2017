@@ -165,10 +165,6 @@ function cargarEspecialidad(){
 					$('#error_calendario').show('slow');
                 } else {
                     //CARGAR DATOS
-                    //var semana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
-                    //for (dia in semana) {
-                      //  $("#calendario").append('<div class="col-md-12"><div class="card"><div class="header"><h4 class="title">' + dia + '</h4></div><table class="table table-striped"><thead><th>Hora</th><th>Médico</th><th>Sala</th><th>Paciente</th></thead><tbody><tr><td>9:00</td><td></td><td></td><td></td></tr><tr><td>9:00</td><td></td><td></td><td></td></tr></tbody></table></div></div</div></div>');
-                    //}
 					$diaAnterior = 0;
 					$j = 0;
 					for(i = 0; i < data.citas.length; i++ ){
@@ -181,12 +177,13 @@ function cargarEspecialidad(){
 							if($j!=0){
 								$("#calendario").append('</tbody></table></div></div</div></div>');
 							}	
-							
-							$("#calendario").append('<div class="col-md-12"><div class="card"><div class="header"><h4 class="title">' + data.citas[i].fecha + '</h4></div><table class="table table-striped"><thead><th>Hora</th><th>Médico</th><th>Sala</th><th>Paciente</th></thead><tbody id="dia'+$j+'">');
+							$fecha = data.citas[i].fecha.split('.');
+							$fecha = $fecha[0]+'/'+$fecha[1]+'/'+$fecha[2];
+							$("#calendario").append('<div class="col-md-12"><div class="card"><div class="header"><h4 class="title">' + $fecha + '</h4></div><table class="table table-striped"><thead><th>Hora</th><th>Médico</th><th>Paciente</th></thead><tbody id="dia'+$j+'">');
 						}
 						
-						
-						$("#dia"+$j).append('<tr><td>'+data.citas[i].hora+'</td><td>' + data.citas[i].medico + '</td><td></td><td>' + data.citas[i].paciente + '</td></tr>');
+						$hora = (data.citas[i].hora).split('.')[0]+':'+(data.citas[i].hora).split('.')[1];						
+						$("#dia"+$j).append('<tr><td>'+$hora+'</td><td>' + data.citas[i].medico + '</td><td>' + data.citas[i].paciente + '</td></tr>');
 					}
 					$("#calendario").append('</tbody></table></div></div</div></div>');
                 }
