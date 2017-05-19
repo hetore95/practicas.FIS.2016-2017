@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Ranking Medicos</title>
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/animate.min.css" rel="stylesheet" />
+    <link href="../css/light-bootstrap-dashboard.css" rel="stylesheet" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet">
+    <link href="../css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <link href="../css/clinica_upm/clinicaUPM.css" rel="stylesheet" />
+
+    <style>
+        .table-fit {
+            width: 0%;
+            white-space: nowrap;
+        }
+        
+        .graphic {
+            width: 100%;
+        }
+        
+        .graphic-container {
+            height: 18px;
+            border: 1px solid grey;
+            border-radius: 2px;
+        }
+        
+        .graphic-display {
+            height: 16px;
+            background-color: #FBC02D;
+        }
+        /*.content {
+            max-width: 1200px;
+        }*/
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="menuPrincipal"></div>
+        <div class="main-panel">
+            <div id="barraNavegacion"></div>
+            <div class="content" style="margin-left:32px; margin-right:32px;">
+                <table class="table table-bordered table-fit">
+                    <tbody id="tabla-estadisticas">
+                        <tr class="active">
+                            <th style="text-align: center;">#</th>
+                            <th style="text-align: center;">DNI</th>
+                            <th style="text-align: center;">Apellido</th>
+                            <th style="text-align: center;">Nombre</th>
+                            <th style="text-align: center;">Citas</th>
+                            <th>Grafica</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../js/bootstrap-checkbox-radio-switch.js"></script>
+<script src="../js/chartist.min.js"></script>
+<script src="../js/bootstrap-notify.js"></script>
+<script src="../js/light-bootstrap-dashboard.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        pintarMenu("ranking", "azure");
+        pintarBarraNavegacion();
+        $("h4.title").css("color", "azure");
+        $("h4.title").css("border-bottom", "1px solid");
+    })
+</script>
+
+<script src="../js/clinica_upm/clinicaUPM.js"></script>
+
+<script>
+    testEstadistias();
+    // pideDatosEstadisticos();
+
+    function testEstadistias() {
+        $.post('/assets/php/medtest.php', function(data) {
+            var pushedData = jQuery.parseJSON(data);
+            estadisticas(pushedData);
+        });
+    }
+
+    function pideDatosEstadisticos() {
+        var respuesta = {};
+        var peticion = {};
+        peticion.accion = 'consultar';
+
+        respuesta = enviarJSON('../php/estadisticas.php', peticion);
+        respuesta.done(function(data, textStatus, jqHXR) {
+            estadisticas(data);
+        });
+    }
+
+    function estadisticas(data) {
+        var max = data[0].n_citas;
+        var min = data[data.length - 1].n_citas;
+        var cont = 1;
+        // console.log("Max: " + max + ", Min: " + min);
+        data.forEach(function(element) {
+            // console.log(JSON.stringify(element));
+            let porcentaje = estadisticasPorcentajesNCitas(min, max, element.n_citas);
+            let html = '';
+            switch (cont) {
+                case 1:
+                    html += '<tr style="background-color: #BBDEFB;">';
+                    break;
+                case data.length:
+                    html += '<tr style="background-color: #F44336;">';
+                    break;
+                default:
+                    html += '<tr>';
+            }
+            html += '<td style="text-align: center;">' + cont++ + '</td><td>' + element.dni + '</td><td>' + element.surname + '</td><td>' + element.name + '</td><td style="text-align: right;">' + element.n_citas + '</td><td class="graphic"><div class="graphic-container"><div class="graphic-display" style="width: ' + porcentaje + '%;"></div></td></tr>';
+            $('#tabla-estadisticas').append(html);
+        });
+    }
+
+    function estadisticasPorcentajesNCitas(min, max, nCitas) {
+        return ((nCitas - min) / (max - min)) * 100;
+    }
+</script>
+
+</html>
