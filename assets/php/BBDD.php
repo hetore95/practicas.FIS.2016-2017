@@ -4,9 +4,9 @@
 
 		// Se conecta a la bbbd y devuelve un identificador de conexión
 
-		$servername = "localhost";
+		$servername = "mariadb";
 		$db_username = "root";
-		$db_password = "";
+		$db_password = "root";
 		$db_name     = "clinica_upm";
 
 		$conn = mysql_connect($servername, $db_username, $db_password);

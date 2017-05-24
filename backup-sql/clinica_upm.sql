@@ -259,7 +259,7 @@ ALTER TABLE `usuario`
 --
 -- Metadatos
 --
-USE `phpmyadmin`;
+
 
 --
 -- Metadatos para cita

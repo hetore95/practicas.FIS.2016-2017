@@ -42,7 +42,7 @@
 	    $response['mensaje'] = "Usuario no registrado.";
 	}
 
-
+	echo("Hola");
 	// Libero la conexión actual a la bbdd
 	mysql_close($link);
 
