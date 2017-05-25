@@ -133,7 +133,7 @@
         comentario.id_paciente = getUrlParam("paciente");
         comentario.id_medico = getUrlParam("medico");
         comentario.comentario = $('#comment').val();
-        respuesta = enviarJSON("otro PHP", dominio);
+        respuesta = enviarJSON("/assets/php/insertarComentario.php", dominio);
         respuesta.done(function(data, textStatus, jqXHR) {
             var d = new Date();
             var date = d.getFullYear() + "/" + d.getMonth() + "/" + d.getDay();
