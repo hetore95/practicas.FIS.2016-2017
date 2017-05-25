@@ -84,8 +84,8 @@
 <script src="../js/clinica_upm/clinicaUPM.js"></script>
 
 <script>
-    testEstadistias();
-    // pideDatosEstadisticos();
+    // testEstadistias();
+    pideDatosEstadisticos();
 
     function testEstadistias() {
         $.post('/assets/php/medtest.php', function(data) {
@@ -99,7 +99,7 @@
         var peticion = {};
         peticion.accion = 'consultar';
 
-        respuesta = enviarJSON('../php/estadisticas.php', peticion);
+        respuesta = enviarJSON('../php/estadistica.php', peticion);
         respuesta.done(function(data, textStatus, jqHXR) {
             estadisticas(data);
         });
